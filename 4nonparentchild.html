@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue Sample</title>
+  </head>
+  <body>
+
+  <!--
+    - 같은 레벨의 컴포넌트간 통신
+      - 동일한 상위 컴포넌트를 가진 2개의 하위컴포넌트 간의 통신
+        -* child -> parent -> 다시 2개의 child
+        -* 컴포넌트 간의 직접적인 통신은 불가능하도록 설계되어 있음.
+
+    - EventBus : 컴포넌트 간의 통신
+      - Non Parent - child 컴포넌트 간의 통신을 위해 EventBus 를 활용
+        - EventBus를 위해 새로운 Vue를 생성하여 아래와 같이 Vue Root Instance가 위치한 파일에 등록
+        //Vue Root Instance 전에 꼭  등록 순서가 중요!
+        export const eventBus = new Vue();
+        new Vue({
+
+        });
+
+    - 이벤트 발생
+      - 이벤트를 발생시킬 컴포넌트에 eventBus 를 import한 후 $emit으로 이벤트 발생
+        - import { evnetBus } from "../../main";
+          eventBus.$emit('refresh', 10);
+
+    - 이벤트 수신
+      - 해당 이벤트를 받을 컴포넌트에도 동일하게 import 후 콜백으로 이벤트 수신
+        - import { evnetBus } from "../../main";
+          created(){
+            eventBus.$on('refresh', function(data){
+              console.log(data); //10
+          })
+          }
+  -->
+
+  <!-- ParentComponent -->
+  <div id="app1">
+    <!-- ChildComponent -->
+    <todo-item v-bind:todo="todo" v-for="todo in Todos" :key="Todo.id"></todo-item>
+    <!-- 할일3
+    todo-list  컴포넌트 등록 -->
+    <todo-list v-bind:list="list" v-for="list in Todo" :key="list.id"></todo-list>
+  </div>
+
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./4quiz.js"></script>
+  </body>
+</html>

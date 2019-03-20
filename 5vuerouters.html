@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue Sample</title>
+  </head>
+  <body>
+
+  <!--
+    - Vue Routers
+      - Router : 화면이 전환될 때 이용되는 것
+      - Vue를 이용한 SPA를 제작할 때 유용한 라우팅 라이브러리
+        -  SPA : 해당 화면에 대한 정보를 가지고 있다가 클라이언트 내부적으로 서버에 요청하지 않고 바로 전환해주는 것
+      - Vue 코어 라이브러리 외에 Router 라이브러리를 공식 지원하고 있고 아래와 같이 설치한다
+        - npm install vue-router --save
+        - Vue 라우터는 기본적으로 RootUrl'/#/'{Router name} 의 구조로 되어 있다.
+          - example.com/#/user
+        - 여기서 # 태그 값을 제외하고 기본 URL 방식으로 요청 때마다 index.html을 받아 라우팅을 하려면
+          - const router = new VueRouter({
+              routes,
+              //아래와 같이 histrory 모드를 추가해주면 된다.
+              mode : 'histrory'
+            })
+  -->
+    <div id="app">
+        <p>
+          <router-link to="/foo">Go to Foo</router-link>
+          <router-link to="/bar">Go to Bar</router-link>
+        </p>
+        <router-view></router-view>
+    </div>
+
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/vue-router.js"></script>
+    <script type="text/javascript" src="./5router.js"></script>
+  </body>
+</html>

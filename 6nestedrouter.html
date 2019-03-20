@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue Sample</title>
+  </head>
+  <body>
+
+  <!--
+    - Nested Router
+      - 라우터로 화면 이동시 Nested Routers를 이용하여 여러개의 컴포넌트를 동시에 렌더링
+      - 렌더링 되는 컴포넌트의 구조는 가장 큰 상위의 컴포넌트가 하위의 컴포넌트를 포함하는 Parent-Child 형태와 같다.
+  -->
+    <!-- localhost:5000
+    <div id="app">
+      <router-view></router-view>
+    </div>
+    localhost:5000/home
+    parentcomponent
+    <div>
+      <p>Main Component rendered</p>
+       child-component
+      <app-header></app-header>
+    </div>
+    -->
+    <!--
+      _ Vue Template Root Element
+        - Vue의 Template에는 최상위 태그가 1개만 있어야 렌더링이 가능하다.
+        - 아래는 Template의 HTML 태그를 정의할 때 주의해야하는 Vue의 성질이다.
+          var foo = {
+            template : `
+              <div>foo</div>
+              <router-view></router-view>
+            `//에러발생 -> 같은 레벨에 태그가 2개가 존재해서 오류가 발생
+        }
+    -->
+
+    <div id="app">
+        <p>
+          <router-link to="/login">Go to Login</router-link>
+          <router-link to="/list">Go to List</router-link>
+        </p>
+        <router-view></router-view>
+    </div>
+
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/vue-router.js"></script>
+    <script type="text/javascript" src="./6router.js"></script>
+  </body>
+</html>

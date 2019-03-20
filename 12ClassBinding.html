@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue Sample</title>
+  </head>
+  <body>
+
+  <!--
+    - css 스타일링을 위해서 class를 아래 2가지 방법으로 추가가 가능하다.
+      - class = "{{ className}}"
+      - v-bind : class
+    - 주의할 점은 위의 두 방법을 함께 사용하지 않고 한 가지만 적용해야 에러를 미연에 방지할 수 있다.
+
+    - 아래와 같이 class 속성과 v-bind:class 속성을 동시에 사용해도 된다.
+    - '<div class="static" v-bind:class="{'class-a' : isA, 'class-b' : isB}"></div>
+      <script>
+        data : {
+          isA : true,
+          isB : flase
+        }
+      </script>'
+    - 위 결과 값은 <div class = "static class-a"></div>
+
+    - 아래와 같이 Array 구문도 사용할 수 있다.
+      - <div v-bind:class="[classA, classB]"></div>
+        <script>
+          data : {
+             classA : 'class-a',
+             classB : 'class-b'
+          }
+        </script>
+  -->
+
+    <div id="app">
+        <router-view name="nestedHeader"></router-view>
+        <router-view></router-view>
+    </div>
+
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/vue-router.js"></script>
+    <script type="text/javascript" src="./7app.js"></script>
+  </body>
+</html>

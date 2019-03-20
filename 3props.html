@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Vue Sample</title>
+  </head>
+  <body>
+
+  <script src="./js/vue.js"></script>
+  <script type="text/javascript">
+    Vue.component('child-com',{
+      props:['shareData'],
+      template:"<p>{{shareData}}</p>"
+    });
+    var app = new Vue({
+      el:'#app1',
+      data:{
+        message : "전달할 부모의 메시지"
+      }
+    });
+
+  </script>
+  <div id="app1">
+    <child-com v-bind:passed-data="message"></child-com>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+  <head>
+
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <title>Vue Sample</title>
+  </head>
+  <body>
+    <div id="app">
+      <button>parent Component</button>
+      <todo-item></todo-item>
+      <todo-footer></todo-footer>
+      <todo-footer-local></todo-footer-local>
+    </div>
+
+    <script>
+      //Vue.component -> 컴포넌트 전역으로 등록
+      //my-component -> 이름
+      // template:'<div>A custom component!</div>' -> 나타낼 html 태그
+      Vue.component('todo-item',{
+        template:'<div>A custom component!</div>'
+      });
+
+      Vue.component('todo-footer',{
+        template:'<div>A 1</div>'
+      });
+      //지역 컴포넌트 등록
+      var cmp={
+        template:'<div>A Local component!</div>'
+      };
+
+      //인스턴스 등록
+      new Vue({
+        el: '#app',
+        components:{
+          //태그명 : 컴포넌트의 내용
+          'todo-footer-local':cmp
+        }
+      })
+    </script>
+  </body>
+</html>

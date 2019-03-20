@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue Sample</title>
+  </head>
+  <body>
+
+  <!--
+    - Vue 에서 제공하는 특별한 Attributes 이며 -v 의 prefix(접두사)를 갖는다.
+    - 자바스크립트 표현식, filter 모두 적용된다.
+      - login의 결과에 따라 P가 존재 또는 미존재
+      - <p v-if="login">Hello!</p>
+      - click = {{doSomething}}와 같은 역활
+      - <a v-on:click="doSomething"></a>
+  -->
+
+    <div id="app">
+        <router-view name="nestedHeader"></router-view>
+        <router-view></router-view>
+    </div>
+
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/vue-router.js"></script>
+    <script type="text/javascript" src="./7app.js"></script>
+  </body>
+</html>

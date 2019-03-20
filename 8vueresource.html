@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue Sample</title>
+  </head>
+  <body>
+
+  <!--
+    - Vue Resource
+      - Vue 에서 HTTP 통신을 위해 제공하는 플러그인
+      - 현재는 공식 플러그인이 아니다. 생태계 활성화를 위한 선택
+
+    - Axios
+      - 현재 뷰에서 HTTP 통신을 하기 위해 사용하는 가장 흔한 라이브러리
+      - 설치 후 Root Vue Instance를 선언하는 js파일에 아래와 같이 등록
+        import VueResource from 'vue-resource';
+        Vue.use(VueResource);
+      - 사용법
+        this.$http.get(url).then(successCallback, failCallback);
+  -->
+
+    <div id="app">
+        <router-view name="nestedHeader"></router-view>
+        <router-view></router-view>
+    </div>
+
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/vue-router.js"></script>
+    <script type="text/javascript" src="./7app.js"></script>
+  </body>
+</html>
